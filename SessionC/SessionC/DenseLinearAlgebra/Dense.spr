@@ -1,0 +1,14 @@
+protocol DenseLinearAlgebra(role master, role worker1, role worker2, role worker3){
+
+	int_array from master to worker1;
+	int_array from master to worker2;
+	int_array from master to worker3;
+
+	int_array from master to worker1;
+	int_array from master to worker2;
+	int_array from master to worker3;
+
+	int_array from worker1 to master;
+	int_array from worker2 to master;
+	int_array from worker3 to master;
+}

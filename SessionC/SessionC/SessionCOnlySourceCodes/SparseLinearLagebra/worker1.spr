@@ -1,0 +1,10 @@
+protocol SparseLinearAlgebra at worker1(role Master){
+	int from Master;
+
+	int_array from Master;
+	int_array from Master;
+	int_array from Master;
+	int_array from Master;
+
+	int_array to Master;
+}

@@ -1,0 +1,15 @@
+protocol Count_number_of_ones(role Master, role Slave1, role Slave2, role Slave3){
+	int from Master to Slave1;
+	int from Master to Slave2;
+	int from Master to Slave3;
+
+	string from Master to Slave1;
+	string from Master to Slave2;
+	string from Master to Slave3;
+
+	int from Slave1 to Master;
+	int from Slave2 to Master;
+	int from Slave3 to Master;
+}
+
+ 

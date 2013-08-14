@@ -1,0 +1,5 @@
+protocol MonteCarlo at Slave1(role Master){
+	double to Master;
+}
+
+ 

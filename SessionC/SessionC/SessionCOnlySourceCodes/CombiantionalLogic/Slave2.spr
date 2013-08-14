@@ -1,0 +1,7 @@
+protocol Count_number_of_ones at Slave2(role Master){
+	int from Master;
+	string from Master;
+	int to Master;
+}
+
+ 

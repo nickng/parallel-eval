@@ -1,0 +1,3 @@
+n = 4 participants
+
+took 7 seconds

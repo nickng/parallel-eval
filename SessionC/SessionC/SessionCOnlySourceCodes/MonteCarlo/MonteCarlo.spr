@@ -1,0 +1,5 @@
+protocol MonteCarlo(role Master, role Slave1, role Slave2, role Slave3){
+	double from Slave1 to Master;
+	double from Slave2 to Master;
+	double from Slave3 to Master;
+}

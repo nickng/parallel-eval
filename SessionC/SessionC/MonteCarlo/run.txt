@@ -1,0 +1,193 @@
+gcc -Isesscc/include example.c -o example -Lsesscc/lib -lsess -lzmq -lantlr3c
+
+setenv LD_LIBRARY_PATH "sesscc/lib"
+./example
+
+
+
+LD_LIBRARY_PATH=../../lib ../../bin/asyncmsg_bob
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+gcc -Wall -I../../include -m64 -fPIC -c st_node.c \
+      -o ../../build/st_node.o
+st_node.c: In function ‘cmp_branchtag’:
+st_node.c:567:18: warning: initialization discards qualifiers from pointer target type
+st_node.c:568:18: warning: initialization discards qualifiers from pointer target type
+gcc -Wall -I../../include -m64 -fPIC -c stack.c \
+      -o ../../build/stack.o
+make[2]: Leaving directory `/homes/ag311/Desktop/sessionc/sesscc/src/common'
+make --directory=parser
+make[2]: Entering directory `/homes/ag311/Desktop/sessionc/sesscc/src/parser'
+gcc -Wall -I../../include -m64 -fPIC -I../common -I. -o ../../build/ScribbleProtocolParser.o -c ScribbleProtocolParser.c
+ScribbleProtocolParser.c:283:26: warning: ‘freeScope’ defined but not used
+ScribbleProtocolParser.c:438:26: warning: ‘getTokenNames’ defined but not used
+gcc -Wall -I../../include -m64 -fPIC -I../common -I. -o ../../build/ScribbleProtocolLexer.o -c ScribbleProtocolLexer.c
+ScribbleProtocolLexer.c: In function ‘mDIGIT’:
+ScribbleProtocolLexer.c:2341:16: warning: unused variable ‘_type’
+gcc -Wall -I../../include -m64 -fPIC -I../common -I. -o ../../build/parser.o -c parser.c
+make[2]: Leaving directory `/homes/ag311/Desktop/sessionc/sesscc/src/parser'
+make --directory=libsess
+make[2]: Entering directory `/homes/ag311/Desktop/sessionc/sesscc/src/libsess'
+gcc -Wall -I../../include -m64 -fPIC \
+      -c libsess.c \
+      -o ../../build/libsess.o
+make --directory=../../src/connmgr
+make[3]: Entering directory `/homes/ag311/Desktop/sessionc/sesscc/src/connmgr'
+gcc -Wall -I../../include -m64 -fPIC -I../common -I. -o ../../build/connmgr.o -c connmgr.c
+make[3]: Leaving directory `/homes/ag311/Desktop/sessionc/sesscc/src/connmgr'
+rm -f ../../build/libsess.a
+ar -cvq ../../build/libsess.a ../../build/st_node.o ../../build/parser.o ../../build/stack.o ../../build/ScribbleProtocolParser.o ../../build/ScribbleProtocolLexer.o ../../build/libsess.o ../../build/connmgr.o
+a - ../../build/st_node.o
+a - ../../build/parser.o
+a - ../../build/stack.o
+a - ../../build/ScribbleProtocolParser.o
+a - ../../build/ScribbleProtocolLexer.o
+a - ../../build/libsess.o
+a - ../../build/connmgr.o
+cp ../../build/libsess.a ../../lib/libsess.a
+make[2]: Leaving directory `/homes/ag311/Desktop/sessionc/sesscc/src/libsess'
+make --directory=connmgr
+make[2]: Entering directory `/homes/ag311/Desktop/sessionc/sesscc/src/connmgr'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/homes/ag311/Desktop/sessionc/sesscc/src/connmgr'
+make[1]: Leaving directory `/homes/ag311/Desktop/sessionc/sesscc/src'
+fusion04% ls
+bin  build  Common.mk  docs  examples  include    lib  Makefile  README  Rules.mk  sesscc-runtime.doxygen  src  tools
+fusion04% cd lib/
+fusion04% ls
+libantlr3c.a  libuuid.a   libuuid.so.1    libzmq.la  libzmq.so.0        libzmq.so.1      libzmq.so.3      pkgconfig
+libsess.a     libuuid.so  libzmq.a    libzmq.so  libzmq.so.0.0.0  libzmq.so.1.0.0  libzmq.so.3.0.0
+fusion04% cd ../
+fusion04% ls
+bin  build  Common.mk  docs  examples  include    lib  Makefile  README  Rules.mk  sesscc-runtime.doxygen  src  tools
+fusion04% pwd
+/homes/ag311/Desktop/sessionc/sesscc
+fusion04% mkdi
+fusion04% cd examples/
+fusion04% ls
+asyncmsg  basicsendrecv  pipeline
+fusion04% cd asy
+fusion04% cd basicsendrecv/
+fusion04% ls
+BasicSendReceive_Alice.spr  BasicSendReceive_Charlie.spr  basicsendrecv_alice.c
+BasicSendReceive_Bob.spr    BasicSendReceive.spr      Makefile
+fusion04% vi basicsendrecv_alice.c 
+fusion04% cd ../
+fusion04% ls
+cdasyncmsg  basicsendrecv  pipeline
+fusion04% cd asyncmsg/
+fusion04% ls
+AsyncMsg_Alice.spr  asyncmsg_bob.c  AsyncMsg_Bob.spr  AsyncMsg.spr
+fusion04% make as
+fusion04% cp ../basicsendrecv/
+BasicSendReceive_Alice.spr    BasicSendReceive_Charlie.spr  basicsendrecv_alice.c         
+BasicSendReceive_Bob.spr      BasicSendReceive.spr          Makefile                      
+fusion04% cp ../basicsendrecv/
+BasicSendReceive_Alice.spr    BasicSendReceive_Charlie.spr  basicsendrecv_alice.c         
+BasicSendReceive_Bob.spr      BasicSendReceive.spr          Makefile                      
+fusion04% cp ../basicsendrecv/Makefile .
+fusion04% vi Makefile 
+
+[No write since last change]
+AsyncMsg_Alice.spr  asyncmsg_bob.c  AsyncMsg_Bob.spr  AsyncMsg.spr  Makefile
+
+Press ENTER or type command to continue
+fusion04% make
+gcc -Wall -I../../include -m64 -fPIC -o ../../bin/asyncmsg_bob asyncmsg_bob.c -L../../lib -lsess -lzmq -lantlr3c
+asyncmsg_bob.c: In function ‘main’:
+asyncmsg_bob.c:12:9: warning: unused variable ‘x’
+fusion04% ls
+AsyncMsg_Alice.spr  asyncmsg_bob.c  AsyncMsg_Bob.spr  AsyncMsg.spr  Makefile
+fusion04% ls ../
+asyncmsg/      basicsendrecv/ pipeline/      
+fusion04% ls ../
+asyncmsg/      basicsendrecv/ pipeline/      
+fusion04% ls ../../
+bin/                    docs/                   lib/                    Rules.mk                tools/
+build/                  examples/               Makefile                sesscc-runtime.doxygen  
+Common.mk               include/                README                  src/                    
+fusion04% ls ../../
+bin/                    docs/                   lib/                    Rules.mk                tools/
+build/                  examples/               Makefile                sesscc-runtime.doxygen  
+Common.mk               include/                README                  src/                    
+fusion04% ls ../../bin/asyncmsg_bob 
+AsyncMsg_Alice.spr  asyncmsg_bob.c      AsyncMsg_Bob.spr    AsyncMsg.spr        Makefile            
+fusion04% ls ../../bin/asyncmsg_bob 
+AsyncMsg_Alice.spr  asyncmsg_bob.c      AsyncMsg_Bob.spr    AsyncMsg.spr        Makefile            
+fusion04%  ../../bin/asyncmsg_bob 
+../../bin/asyncmsg_bob: error while loading shared libraries: libzmq.so.1: cannot open shared object file: No such file or directory
+fusion04% LD_LIBRARY_PATH=../../li ../bin/asyncmsg_bob
+LD_LIBRARY_PATH=../../ not found
+
+fusion04% LD_LIBRARY_PATH=../../li ../bin/asyncmsg_bob
+LD_LIBRARY_PATH=../../ not found
+
+fusion04% LD_LIBRARY_PATH=../../libn ../bin/asyncmsg_bob
+LD_LIBRARY_PATH=../../ not found
+
+fusion04% LD_LIBRARY_PATH=../../libn ../bin/asyncmsg_bob
+LD_LIBRARY_PATH=../../ not found
+
+fusion04% LD_LIBRARY_PATH=../../lib ../bin/asyncmsg_bob
+LD_LIBRARY_PATH=../../ not found
+
+fusion04% LD_LIBRARY_PATH=../../lib ../bin/asyncmsg_bob
+LD_LIBRARY_PATH=../../ not found
+
+fusion04% LD_LIBRARY_PATH=../../lib ../../bin/asyncmsg_bob
+LD_LIBRARY_PATH=../../lib: Command not found.
+fusion04% setenv LD_LIBRARY_PATH "../../lib" ../../bin/asyncmsg_bob
+setenv: Too many arguments.
+fusion04% setenv LD_LIBRARY_PATH "../../lib" 
+fusion04% ../../bin/asyncmsg_bob
+^C
+fusion04% ls
+AsyncMsg_Alice.spr  asyncmsg_bob.c  AsyncMsg_Bob.spr  AsyncMsg.spr  Makefile
+fusion04% cd ..
+fusion04% ls
+asyncmsg  basicsendrecv  pipeline
+fusion04% cd ..
+fusion04% cd ..
+fusion04% ls
+example.c  sesscc
+fusion04% gcc example.c -0 example
+gcc: example: No such file or directory
+gcc: unrecognized option '-0'
+example.c:4:21: fatal error: libsess.h: No such file or directory
+compilation terminated.
+fusion04% gcc example.c -o example
+example.c:4:21: fatal error: libsess.h: No such file or directory
+compilation terminated.
+fusion04% gcc -Isesscc/include example.c -o example
+/tmp/ccTt4DvQ.o: In function `main':
+example.c:(.text+0x15): undefined reference to `zmq_init'
+example.c:(.text+0x34): undefined reference to `sess_client'
+example.c:(.text+0x53): undefined reference to `sess_server'
+example.c:(.text+0x68): undefined reference to `send_int'
+example.c:(.text+0x7b): undefined reference to `recv_int'
+example.c:(.text+0x8c): undefined reference to `send_string'
+collect2: ld returned 1 exit status
+fusion04% gcc -Isesscc/include example.c -o example -Lsesscc/lib -lsess -lzmq -lantlr3c
+fusion04% ./example
+./example: error while loading shared libraries: libzmq.so.1: cannot open shared object file: No such file or directory
+fusion04% setenv LD_LIBRARY_PATH "sesscc/lib"
+fusion04% ./example
+fusion04% ls
+example  example.c  sesscc
+fusion04% 
+fusion04%

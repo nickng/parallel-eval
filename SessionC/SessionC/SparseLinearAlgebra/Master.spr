@@ -1,0 +1,24 @@
+protocol SparseLinearAlgebra at Master(role worker1, role worker2, role worker3){
+	int to worker1;
+	int to worker2;
+	int to worker3;
+
+	int_array to worker1;
+	int_array to worker1;
+	int_array to worker1;
+	int_array to worker1;
+
+	int_array to worker2;
+	int_array to worker2;
+	int_array to worker2;
+	int_array to worker2;
+
+	int_array to worker3;
+	int_array to worker3;
+	int_array to worker3;
+	int_array to worker3;
+
+	int_array from worker1;
+	int_array from worker2;
+	int_array from worker3;
+}

@@ -1,0 +1,6 @@
+protocol DenseLinearAlgebra at worker1(role master){
+
+	int_array from master;
+	int_array from master;
+	int_array to master;
+}

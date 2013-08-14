@@ -1,0 +1,46 @@
+	/* open the file if possible, else abort */
+	in_file = fopen(FILE_NAME, "r");
+	if (in_file == NULL) {
+		printf("Cannot open %s\n", FILE_NAME);
+		exit(0);
+	}
+	
+	/* Read all the characters of the file */
+	while (1) {
+		ch = fgetc(in_file);
+		/* Check if we are at end of file */
+		if (ch == EOF)
+			break;
+			++count;
+	}
+	
+	printf("Number of characters in %s is %d\n",
+	FILE_NAME, count);
+		
+	/* Close the file */
+	fclose(in_file);	
+		
+	/* open the file if possible, else abort */
+	in_file = fopen(FILE_NAME, "r");		
+		
+	/* The word that we count to count the
+	occurences of 1*/
+	msg = (char *) malloc( (count ) * sizeof(char) );
+	int counter = 0;
+		
+	/* Read all the characters of the file
+	and store them in the word*/
+	while (1) {
+		ch = fgetc(in_file);
+		/* Check if we are at end of file */
+		if (ch == EOF)
+			break;
+		msg[counter++] = (char)ch;	
+	}	
+	/* String termination character */	
+	msg[counter] = '\0';
+	
+	/* Close the file */
+	fclose(in_file);	
+
+	printf("Word is %s\n", msg);	
